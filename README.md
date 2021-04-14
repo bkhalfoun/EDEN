@@ -35,6 +35,7 @@ bash run_single_attacks.sh [pathToTrainData]  [pathToTestData] [xdays=15days] [d
 We provide an example of Privamov Dataset in running FURIA. Thus, here is the link for preprocessed data (feature vectors of non-obfuscated and obfuscated data previously generated): https://drive.google.com/drive/folders/1FGxqMLihNVD8rq7LCqg1UrnraUN_1cXS?usp=sharing
 
 The notebook includes : 
+
 1- Setting ( prepare Project inputs)
 
 2- Data preprocessing (Uniforming features, verifying timestamps, Reducing and centering, Normalizing ID)
@@ -54,6 +55,7 @@ Concatenate the utility metric values to each Prediction with prepareUtility-per
 Then, run: python  EDEN.py [pathToPredictions] [outputDirectory] [outputFile]
   
 [outputDirectory] : contains, for each round, protected users against AF model of FURIA. 
+
 [outputFile] : has the following columns 'Dataset','Lppm','Model','Round', 'Nb_user','Correct', 'Total','Accuracy'.
 
 # Contact
