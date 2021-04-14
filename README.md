@@ -22,7 +22,7 @@ Timestamp = Unix time POSIX.
 
 # Run LPPM script and produce feature vectors for each LPPM
 
-bash run_LPPMs-train-SERVER.sh data [level=15] [nameOutput] "1" [pathToSourceFiles]  [workingDirectory] [promesse-distance=200.meters] [geoi-epsilon=0.01] [trl-range=2]
+bash run_LPPMs-train-SERVER.sh [data] [level=15] [nameOutput] "1" [pathToSourceFiles]  [workingDirectory] [promesse-distance=200.meters] [geoi-epsilon=0.01] [trl-range=2]
  
 NB: Install S2Geometry library for python as illustated in https://s2geometry.io/about/platforms
 
