@@ -22,13 +22,13 @@ Timestamp = Unix time POSIX.
 
 # Run LPPM script and produce feature vectors for each LPPM
 
-bash run_LPPMs-train-SERVER.sh data <level> <nameOutput> "1" <path to source files>  <working directory> <promesse-distance> <geoi-epsilon> <trl-range>
+bash run_LPPMs-train-SERVER.sh data [level=15] [nameOutput] "1" [pathToSourceFiles]  [workingDirectory] [promesse-distance=200.meters] [geoi-epsilon=0.01] [trl-range=2]
  
 NB: Install S2Geometry library for python as illustated in https://s2geometry.io/about/platforms
 
 # Run Attacks script 
 
-bash run_single_attacks.sh <pathToTrainData>  <pathToTestData> <xdays=15days> <datasetName> <lppmName>  <workdir> <pathToSourceFiles>
+bash run_single_attacks.sh [pathToTrainData]  [pathToTestData] [xdays=15days] [datasetName] [lppmName]  [workdir] [pathToSourceFiles]
   
 # Run FURIA 
 
@@ -36,9 +36,13 @@ We provide an example of Privamov Dataset in running FURIA. Thus, here is the li
 
 The notebook includes : 
 1- Setting ( prepare Project inputs)
+
 2- Data preprocessing (Uniforming features, verifying timestamps, Reducing and centering, Normalizing ID)
+
 3- Generate DRk (Data Round "k") : prepare mobility data of each round (i.e., each day) per user.
+
 4- Generate models (AFi)
+
 5- Test Model AFi with DRi+1.
 
 # Run EDEN 
@@ -47,10 +51,10 @@ One the experiment of FURIA is done (i.e., the federated models are generated), 
 
 Concatenate the utility metric values to each Prediction with prepareUtility-perDay.py
 
-Then, run: python  EDEN.py <pathToPredictions>  <outputDirectory>  <outputFile>
+Then, run: python  EDEN.py [pathToPredictions] [outputDirectory] [outputFile]
   
-<outputDirectory> : contains, for each round, protected users against AF model of FURIA. 
-<outputFile> : has the following columns 'Dataset','Lppm','Model','Round', 'Nb_user','Correct', 'Total','Accuracy'.
+[outputDirectory] : contains, for each round, protected users against AF model of FURIA. 
+[outputFile] : has the following columns 'Dataset','Lppm','Model','Round', 'Nb_user','Correct', 'Total','Accuracy'.
 
 # Contact
 
