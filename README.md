@@ -16,7 +16,7 @@ multiple subtraces of mobility per user = multiple CSV files named <user_id_seq>
 
 CSV file format = Each line is a record of the mobility trace.
 
-One record = <lattitude>,<longitude>,<timestamp>
+One record = [lattitude,longitude,timestamp]
 
 Timestamp = Unix time POSIX.
 
