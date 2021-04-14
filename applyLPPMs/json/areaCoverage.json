@@ -1,0 +1,41 @@
+ 
+{
+  "name": "A",
+  "owner": "MoMa <mohamed.maouche@insa-lyon.fr",
+  "graph": [
+    {
+      "op": "EventSource",
+      "name": "EventSourceTrain",
+      "inputs": {
+            "url" : {"param": "urltrain" ,
+                    "default_value" : "/home/hacker/projet_mobility/sc/42-fixed-3600-gap-900-accio"
+                    },
+        "kind": {"value": "csv"}
+      }
+    },
+
+    {
+      "op": "EventSource",
+      "name": "EventSourceTest",
+      "inputs": {
+            "url" : {"param": "urltest" ,
+                    "default_value" : "/home/hacker/projet_mobility/sc/42-fixed-3600-gap-900-accio"
+                    },
+        "kind": {"value": "csv"}
+      }
+    },
+             {
+      "op": "AreaCoverageMatrix",
+      "name" : "AreaCoverageMatrix",
+      "inputs": {
+        "train": {"reference": "EventSourceTrain/data"},
+        "test": {"reference": "EventSourceTest/data"},
+        "cellSize": {"param": "cellSize" ,
+                    "default_value" : "800.meters"
+                    }
+
+      }
+    } 
+  ]
+}
+

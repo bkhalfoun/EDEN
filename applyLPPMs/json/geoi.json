@@ -1,0 +1,31 @@
+ 
+{
+  "name": "A",
+  "owner": "MoMa <mohamed.maouche@insa-lyon.fr",
+  "graph": [
+    {
+      "op": "EventSource",
+      "inputs": {
+            "url" : {"param": "url" ,
+                    "default_value" : "/home/hacker/projet_mobility/sc/test-accio/42-fixed-3600-gap-900-accio"
+                    },
+        "kind": {"value": "csv"}
+      }
+    },
+        
+           {
+      "op": "GeoIndistinguishability",
+      "name" : "GeoIndistinguishability",
+      "inputs": {
+        "data": {"reference": "EventSource/data"},
+        "epsilon": {"value" : 0.001
+                }
+
+      }
+    }
+        
+   
+    
+  ]
+}
+

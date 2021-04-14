@@ -1,0 +1,43 @@
+ 
+{
+  "name": "A",
+  "owner": "MoMa <mohamed.maouche@insa-lyon.fr",
+  "graph": [
+    {
+      "op": "EventSource",
+      "name": "EventSourceTrain",
+      "inputs": {
+            "url" : {"param": "urltrain" ,
+                    "default_value" : "/home/hacker/projet_mobility/sc/train-accio"
+                    },
+        "kind": {"value": "csv"}
+      }
+    },
+
+    {
+      "op": "EventSource",
+      "name": "EventSourceTest",
+      "inputs": {
+            "url" : {"param": "urltest" ,
+                    "default_value" : "/home/hacker/projet_mobility/sc/test-accio"
+                    },
+        "kind": {"value": "csv"}
+      }
+    },
+    {
+      "op": "PoisReidentKSet",
+      "name": "PoisReidentKSet",
+      "inputs": {
+        "diameter" : {"param": "diameter" ,
+                    "default_value" : "500.meters"
+                    },
+               "duration" : {"param": "duration" ,
+                    "default_value" : "5.minutes"
+                    },
+        "train": {"reference": "EventSourceTrain/data"},
+        "test": {"reference": "EventSourceTest/data"}
+      }
+    }
+  ]
+}
+

@@ -1,0 +1,32 @@
+ 
+{
+  "name": "A",
+  "owner": "MoMa <mohamed.maouche@insa-lyon.fr",
+  "graph": [
+    {
+      "op": "EventSource",
+      "inputs": {
+            "url" : {"param": "url" ,
+                    "default_value" : "/home/mmaouche/machine-learning/code/mobilityTraceClassification/experiments/splitTraces/42-fixed-3600-gap-900-accio"
+                    },
+        "kind": {"value": "csv"}
+      }
+    },
+        
+           {
+      "op": "Promesse",
+      "name" : "Promesse",
+      "inputs": {
+        "data": {"reference": "EventSource/data"},
+        "epsilon": {"param": "epsilonPromesse",
+                    "default_value" : "50.meters"
+                }
+      }
+    }
+    
+        
+   
+    
+  ]
+}
+

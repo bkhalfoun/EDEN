@@ -1,0 +1,39 @@
+ 
+{
+  "name": "A",
+  "owner": "MoMa <mohamed.maouche@insa-lyon.fr",
+  "graph": [
+    {
+      "op": "EventSource",
+      "name": "EventSourceTrain",
+      "inputs": {
+            "url" : {"param": "urltrain" ,
+                    "default_value" : "/home/mmaouche/Code/sklearn/mobilityTraceClassification/experiments/sc/verifySTD/test/"
+                    },
+        "kind": {"value": "csv"}
+      }
+    },
+
+    {
+      "op": "EventSource",
+      "name": "EventSourceTest",
+      "inputs": {
+            "url" : {"param": "urltest" ,
+                    "default_value" : "/home/mmaouche/Code/sklearn/mobilityTraceClassification/experiments/sc/verifySTD/data/"
+                    },
+        "kind": {"value": "csv"}
+      }
+    },
+
+    {
+      "op": "SpatioTemporalDistortion",
+      "name" : "SpatioTemporalDistortiongeoi",
+      "inputs": {
+        "train": {"reference": "EventSourceTrain/data"},
+        "test": {"reference": "EventSourceTest/data"} 
+      }
+    } 
+
+  ]
+}
+
